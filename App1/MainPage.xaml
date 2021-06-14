@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="App1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:models="using:App1.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <ListView x:Name="Employee_Item">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:Employee">
+                    <RelativePanel>
+                            <TextBlock x:Name="Name" Width="100" Margin="40 ,50,0,0" Text="{x:Bind name}" FontSize="20"/>
+                            <TextBlock x:Name="Role" Width="100" RelativePanel.RightOf="Name" Margin="50 ,50,0,0" Text="{x:Bind role}" FontSize="20"/>
+                            <TextBlock RelativePanel.RightOf="Role" Margin="50 ,50,0,0" Text="{x:Bind birthday}" FontSize="20"/>
+                        </RelativePanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
